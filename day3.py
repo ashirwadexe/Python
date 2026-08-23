@@ -81,22 +81,67 @@
 # A[1:3] = ['A','B','C']
 # print(A)
 
-# DELETING ITEMS FROM A LIST
-# del
-B = [1,2,3,4,5,6,7,8]
+# # DELETING ITEMS FROM A LIST
+# # del
+# B = [1,2,3,4,5,6,7,8]
 # del B
 # print(B)
 # del B[0]
 # print(B)
 
-# remove - delete the data from its value and not index
+# # remove - delete the data from its value and not index
 # B.remove(5)
 # print(B)
 
-# pop - iska default behaviour hai last item ko delete krna if idex not pass in parameter
+# # pop - iska default behaviour hai last item ko delete krna if idex not pass in parameter
 # B.pop()
 # print(B)
 
-# clear - list ko empty kr deta hai
-B.clear()
-print(B)
+# # clear - list ko empty kr deta hai
+# B.clear()
+# print(B)
+
+# # OPERATIONS ON LIST
+# # Arithmatic
+# A = [1,2,3]
+# B = ['A','B']
+# print(A+B)
+
+# # Multiplication
+# print(A*2)
+
+# # LOOPS IN LIST
+# L1 = [1,2,3,[4,5,6,7,8]]
+# for i in L1:
+#     print(i)
+
+
+
+# # LIST FUNCTIONS
+
+# A = [1,2,3,4,3,3,5,2,5,56,2,2,2,38,9,0]
+# print(len(A))
+# print(max(A))
+# print(min(A))
+# # print(sorted(A, reverse=True)) #to reverse the list
+
+# print(A.count(2))
+# print(A.index(38))
+# A.reverse() #permanent op - it reverses the original list 
+# print(A)
+
+# # Sorted vs Sort
+# B = [4,3,2,0,7,1]
+# print(B)
+# print(sorted(B)) #sort the data temp
+# print(B)
+# B.sort() #sort data permanently
+# print(B) 
+
+# Copy - create a copy in momery
+C = [2,4,2,4,8]
+print(C)
+print(id(C))
+C1 = C.copy()
+print(C1)
+print(id(C1))
