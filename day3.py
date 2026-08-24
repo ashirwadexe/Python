@@ -138,10 +138,45 @@
 # B.sort() #sort data permanently
 # print(B) 
 
-# Copy - create a copy in momery
-C = [2,4,2,4,8]
-print(C)
-print(id(C))
-C1 = C.copy()
-print(C1)
-print(id(C1))
+# # Copy - create a copy in momery
+# C = [2,4,2,4,8]
+# print(C)
+# print(id(C))
+# C1 = C.copy()
+# print(C1)
+# print(id(C1))
+
+# # LIST COMPREHENSION
+# # It provides a concise way of creating lists
+# # newlist = [expression for item in iterable if condition == true]
+# # Advantages
+# #  1 more time efficient and space efficient than loop
+# #  2 require fewer lines of code
+# #  3 transforms iterative statement into a formula
+
+# # HOW TO USE LIST COMREHENSION
+# # Add 1 to 10 numbers to a list
+# L = []
+# for i in range(1, 10):
+#     L.append(i)
+
+# print(L)
+
+# L = [i for i in range(1,10)]
+# print(L)
+
+# # scalar multiplication on a vector
+# v = [2,3,4]
+# s = -3
+
+# L = [s*i for i in v]
+# print(L)
+
+# # Add squares
+# v = [1,2,3,4,5]
+# L = [i**2 for i in v]
+# print(L)
+
+# Print all number divisible ny 5 in the range of 1 to 50
+A = [i for i in range(1,51) if i%5==0]
+print(A)
