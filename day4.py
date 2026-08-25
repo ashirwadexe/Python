@@ -129,3 +129,157 @@
 # # unzipping
 # list(zip(a,b))
 # print(list(zip(a,b)))
+
+
+# -------------------------------------
+# ------------Sets---------------------
+# -------------------------------------
+
+# A set is an unordered collection of items. Every set element is unique (no duplicates) and must be immutable (cannot be changed).
+# However, a set itself is mutable. We can add or remove items from it.
+# Sets can also be used to perform mathematical set operations like union, intersection, symmetric difference, etc.
+
+# ------------Characterstics:---------------
+# Unordered
+# Mutable - can be changed
+# No Duplicates
+# Can't contain mutable data types
+
+# # --------Creating a Set-----------
+
+# # empty
+# s = {} # ye kabhi set nhi banega dicationary banega
+# s = set() # this is an empty set
+# print(s)
+# print(type(s)) 
+
+# # 1D and 2D
+# s1 = {1,2,3}
+# print(s1)
+# # s2 = {1,2,3,{4,5}} # error cant make 2d set
+
+# # home and hetro set
+# s3 = {1,'hello', 4.5, True}
+# print(s3) 
+# # True output me nhi de raha - since true =1 and 1 is already there and set doesnt allow dplicates
+# # sets are unordered therefore hashing is deciding positiosn of items
+
+# # using type c0onversion
+# s4 = set([1,2,3])
+# print(s4)
+
+# # duplicates note allowed
+# s5 = {1,1,2,2,2,3,3,3,3,3}
+# print(s5)
+
+# # set cant have mutable items
+# # s6 = { 1,2,[3,4]} # since it is mutable
+
+# # ---------ACCESSING ITEM IN SETS---------
+# # indexing and slicing i not allowed since it is unordered
+# # can access items but whole set only
+
+# # ---------EDITING ITEM IN SETS---------
+# # not allowed same as accessing
+
+# # ---------ADD ITEM IN SETS--------- 
+# s7 = {1,2,3,4}
+# s7.add(5) # this add position will be decided by hashing
+# print(s7)
+
+# # ---------UPDATE ITEM IN SETS--------- 
+# s7.update([6,7,8]) # it will add multiple items at once
+
+# # ---------DELETE ITEM IN SETS--------- 
+# s8 = {1,2,3}
+# del s8
+# # print(s8)
+
+# s9 = {1,2,3,4,5}
+# s9.discard(3) # it deletes an item from set
+# print(s9)
+
+# s9.remove(5) # same as discard but it will throm error if item not found
+# print(s9)
+
+# s9.pop() # it will randomly delete an item
+# print(s9)
+
+# s9.clear() # it will clear the whole set
+# print(s9)
+
+# # -------------SET OPERATIONS---------------
+# s1 = {1,2,3,4,5}
+# s2 = {3,4,5,6,7,8,9,10}
+# # UNION (|)
+# print(s1 | s2)
+
+# # INTERSECTION (&)
+# print(s1 & s2)
+
+# # DIFFERENCE (-)
+# print(s1 - s2) # s1 me s2 ka jo bhi nhi h vo sab print ho jaega
+# print(s2 - s1)
+
+# # SYMMETRIC DIFFERENCE (^) - common ko chod ke sab kuch print ho jaega
+# print(s1 ^ s2)
+
+# # MEMBERSHIP TEST
+# print(6 not in s2)
+
+# # ITERATION
+# for i in s1:
+#     print(i)
+
+
+# -------------SET Functions---------------
+
+# # LEN/MIN/MAX/SUM/SORTED
+# s1 = {1,2,3,4,5,6,7}
+# print(len(s1))
+# print(max(s1))
+# print(min(s1))
+# print(sum(s1))
+# print(sorted(s1, reverse=True))
+
+# s1 = {1,2,3,4,5}
+# s2 = {3,4,5,6,7,8,9,10}
+# # UNION/UPDATE
+# print(s1.union(s2)) #same as s1 | s2
+# print(s1.update(s2)) #isme ham s2 ki value s1 me daal rhe hai but s2 same rahega but s1 me s2 merge ho jaega
+
+# # INTERSECTION/INYERSECTION_UPDATE
+# print(s1.intersection(s2))
+# print(s1.intersection_update(s2))
+
+# # DEFFERENCE/DIFFERENCE_UPDATE
+# print(s1.difference(s2))
+# print(s1.difference_update(s2))
+
+# # SYMMETRIC_DIFFERENCE/SYMMENTRIC_DIFFERENCE_UPDATE
+# print(s1.symmetric_difference(s2))
+# print(s1.symmetric_difference_update(s2))
+
+# # ISDISJOINT/ISSUBSET/ISSUPERSET
+# s3 = {1,2,3,4}
+# s4 = {3,4}
+
+# print(s3.isdisjoint(s4)) #disjoint set vo sets hote h jinme kuch bhi common na ho
+# print(s3.issubset(s4)) #subset set vo hota hai jsime dusra set pahle ke andar aa jata ahi
+# print(s4.issubset(s3)) #subset set vo hota hai jsime dusra set pahle ke andar aa jata ahi
+# print(s3.issuperset(s4)) #superset me dusra set pahle ke andar pura aa jata hai
+
+# # -------FROZEN SET--------------
+# # Frozen set is just an immutable version of python set
+
+# # creating frozen set
+# fs = frozenset([1,2,3,4])
+# print(fs)
+
+# # What does work and what not ?
+# # all functions of set will work 
+# # doesnt work -> write operations(add, delete, update, edit)
+
+# # SET COMPREHENSION
+# fs = {i for i in range(1,11) if i%2==0}
+# print(fs)
