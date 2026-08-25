@@ -62,8 +62,8 @@
 # t8 = (1,2,3,4,5,6,7,8)
 # t8[0] = 100 #it will give type error kyoki tupple me kuch edit kr nhi sakte ek baar assign ho jane ke baad
 
-# -----------Adding Items---------
-# not possible same reason as editing
+# # -----------Adding Items---------
+# # not possible same reason as editing
 
 # # ----------Deleteing Items-------
 # # pure tupple ko delete kr sakte but ek item ko nhi
@@ -102,14 +102,14 @@
 # # index
 # print(t12.index(8))
 
-# --------------DIFFERENCE BW TUPPLE AND LISTS---------------
-# syntax diff'
-# mutability
-# speed - tupple fast since immutabe
-# memory - tupple takes less memory
-# built in functions - list have more fnt
-# error - list is more error prone
-# usability - jaha changes nhi chahiye use tupple
+# # --------------DIFFERENCE BW TUPPLE AND LISTS---------------
+# # syntax diff'
+# # mutability
+# # speed - tupple fast since immutabe
+# # memory - tupple takes less memory
+# # built in functions - list have more fnt
+# # error - list is more error prone
+# # usability - jaha changes nhi chahiye use tupple
 
 # # ------ Tupple Unpacking----------
 # a,b,c = (1,2,3) # both side must be equal for unpacking
@@ -131,19 +131,19 @@
 # print(list(zip(a,b)))
 
 
-# -------------------------------------
-# ------------Sets---------------------
-# -------------------------------------
+# # -------------------------------------
+# # ------------Sets---------------------
+# # -------------------------------------
 
-# A set is an unordered collection of items. Every set element is unique (no duplicates) and must be immutable (cannot be changed).
-# However, a set itself is mutable. We can add or remove items from it.
-# Sets can also be used to perform mathematical set operations like union, intersection, symmetric difference, etc.
+# # A set is an unordered collection of items. Every set element is unique (no duplicates) and must be immutable (cannot be changed).
+# # However, a set itself is mutable. We can add or remove items from it.
+# # Sets can also be used to perform mathematical set operations like union, intersection, symmetric difference, etc.
 
-# ------------Characterstics:---------------
-# Unordered
-# Mutable - can be changed
-# No Duplicates
-# Can't contain mutable data types
+# # ------------Characterstics:---------------
+# # Unordered
+# # Mutable - can be changed
+# # No Duplicates
+# # Can't contain mutable data types
 
 # # --------Creating a Set-----------
 
@@ -232,7 +232,7 @@
 #     print(i)
 
 
-# -------------SET Functions---------------
+# # -------------SET Functions---------------
 
 # # LEN/MIN/MAX/SUM/SORTED
 # s1 = {1,2,3,4,5,6,7}
@@ -283,3 +283,137 @@
 # # SET COMPREHENSION
 # fs = {i for i in range(1,11) if i%2==0}
 # print(fs)
+
+
+
+# # ======================================
+# # ============DICTIONARY================
+# # ======================================
+
+# # Dictionary in Python is a collection of keys values, used to store data values like a map, which, unlike other data types which hold only a single value as an element.
+# # In some languages it is known as map or assosiative arrays.
+
+# # dict = { 'name' : 'nitish' , 'age' : 33 , 'gender' : 'male' }
+
+# # Characterstics:
+
+# # Mutable
+# # Indexing has no meaning
+# # keys can't be duplicated
+# # keys can't be mutable items
+
+# # -------------CREATING A DICTIONARY---------------
+
+# d = {} #empt
+# print(d)
+
+# d1 = {'name': 'Ashirwa','gender': 'Male'} #1d homo
+# print(d1)
+
+# d2 = {(1,2,3):1, 'hello':'world'} #1d hetro
+# print(d2)
+
+# # 2D - JSON follows dictionary
+# d3 = {
+#     'name':'Ashirwad',
+#     'collage': 'IGNOU',
+#     'sem': 2,
+#     'subject': {
+#         'dsa': 50,
+#         'CN': 50,
+#         'DA': 65
+#     }
+# }
+# print(d3)
+
+# # Using sequence and dict function
+# d4 = dict([('name','bappy'),('age',23), (3,3)])
+# print(d4)
+
+# # duplicate keys
+# d5 = {'name':'ashirwad', 'name':'bappy'} #duplicate keys are not allowed
+# print(d5)
+
+# # mutable items as keys
+# # d6 = {'name':'ashirwad', [1,2,3]:3} # not allowed - error
+# d6 = {'name':'ashirwad', (1,2,3):3} # tupple allowed - error
+# print(d6)
+
+# # -------------ACCESSING ITEMS DICTIONARY---------------
+
+# # []
+# d = {'name': 'Ashirwad','gender': 'Male'}
+# print(d['name'])
+# print(d['gender'])
+
+# # get()
+# print(d.get('name'))
+# print(d.get('gender'))
+
+# # 2D
+# d['item1']['item2']
+
+# # -------------ADDING KEY-VALUE PAIR TO DICTIONARY---------------
+# d = {'name': 'Ashirwad','gender': 'Male'}
+# d['age'] = 23
+# d['weight'] = 80
+# print(d)
+
+# # -------------REMOVE KEY-VALUE PAIR FROM DICTIONARY---------------
+
+# d = {'name': 'Ashirwad', 'gender': 'Male', 'age': 23, 'weight': 80}
+# # pop
+# d.pop('age')
+# print(d)
+
+# # popitem - last item ko delete krta hai
+# d.popitem() 
+# print(d)
+
+# # delete() - pure us ek item ko delete kr dega
+# del d['name']
+# print(d)
+
+# # clear() - pure dict ko delete kr dega - empty bana dega
+# d.clear()
+# print(d)
+
+# # --------------EDIT KEY-VALUE PAIR----------------
+
+# d = {'name': 'Ashirwad', 'gender': 'Male', 'age': 23, 'weight': 80}
+# d['name'] = 'Bappy'
+# print(d)
+
+# # -------------------DICTIONARY OPERATIONS------------------
+
+# # Membership
+# d = {'name': 'Ashirwad', 'gender': 'Male', 'age': 23, 'weight': 80}
+# print(d)
+# print('Ashirwad' in d) # false since value ki baat  nhi krega keys ki krega - FALSE
+# print('name' in d) # keys search kr rhe to TRUE dega
+
+# # iteration
+# for i in d:
+#     print(i) #only keys print honge
+
+# for i in d:
+#     print(i, d[i]) # key-value print hoga
+
+# # -------------------DICTIONARY FUNCTIONS------------------
+
+# d = {'name': 'Ashirwad', 'gender': 'Male', 'age': 23, 'weight': 80}
+# # len/sorted
+# print(len(d))
+# print(sorted(d, reverse=True))
+
+# # items/keys/values
+# print(d.items()) #tupple dega
+# print(d.keys()) #kwys dega
+# print(d.values()) #values dega
+
+# # update()
+# d1 = {1:2, 3:4, 5:6 }
+# d2 = {4:7, 6:8}
+
+# d1.update(d2)
+# print(d1)
