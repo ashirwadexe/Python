@@ -1,182 +1,156 @@
-# # ------------------------------------------
-# # ------------------LIST--------------------
-# # ------------------------------------------
+# # -------------------------------------------
+# # ---------------------STRINGS---------------
+# # -------------------------------------------
 
-# # List is a datatype where you can store multiple items under 1 name. More technically, lists act like dynamic arrays which means you can add more items on the fly.
+# # Strings are sequence of Characters
+# # In Python specifically, strings are a sequence of Unicode Characters
 
-# L = [20, 'Jessa', 35.43]
+# # --------------Creating Strings---------------------
+# s = 'hello'
+# print(s)
 
-# # ARRAYS Vs LIST
-# # 1. Fixed size-array vs dynamic size-array
-# # 2. Conviniance in list because can add multiple data type in a single list but cant do the same in a    array -> so list is hetrogenious.
-# # 3. Speed of execution is slow as compared to array.
-# # 4. List occupies more space in memory as compared to array.
+# s = "hello"
+# print(s)
 
-# # HOW LIST STORED IN MEMORY ?
-# # stored in a referencial aaray or like pointers in C.
-# # id() prints the memory address of data
-# L = [1,2,3]
-# print(id(L[0]))
-# print(id(L[1]))
-# print(id(L[2]))
+# s = """Hello world""" # tripple inverted comma - for multi line strings
+# print(s)
 
-# # CHARACTERISTICS OF LIST
-# # Ordered
-# # Changable/mutable
-# # hetrogenous
-# # can gave duplicates
-# # are dynamic
-# # items can be accessed
-# # can contain any kind of objects in python
+# s = str('hello')
+# print(s)
 
-# # CREATING A LIST
-# print([]) #empty list
-# print([1,2,3,4,5]) #1D list
-# print([1,2,3, [4,5]]) #2D list
-# print([1,2,[3,4,[5,6,7]]]) #3D list
-# print([1,2,4.55,(4+3j), "Bappy"]) #hetrogenous list
-# print(list('Hello')) #type conversion
+# # --------------Accessing Strings---------------------
+# # INDEXING +ve
+# s = "hello world"
+# print(s[0])
+# print(s[9])
+# print(s[4])
 
-# # ACCESSING ITEMS FORM LIST
-# # Indexing
-# A = [1,2,3,4,5,6]
-# print(A[0]) #positive indexing
-# print(A[-1]) #negative indexing - ye right se access krna start krta hai
+# # INDEXING -ve
+# print(s[-3])
+# print(s[-1])
+# print(s[-2])
+# print(s[::-1]) #it reverses the string
 
-# B = [1,2,3,[4,5]] 
-# print(B[3])
-# print(B[3][0])
-# print(B[3][1])
+# # SLICING
+# S = "HELLO WORLD"
+# print(S[0:6])
+# print(S[0:9])
+# print(S[0:11:2]) #2 ka jump le ke print hoga
 
-# C = [[[1,2],[3,4],[[5,6],[7,8]]]]
-# print(C[0][0][1])
-# print(C[0][0][0])
+# --------------Adding Chars to Strings---------------------
 
-# # SLICING - jab ek sath multiple item nikalne ho list se
-# print(A[2:5])
-# print(A[::-1]) #to reverse the list
 
-# # ADDING ITEMS TO A LIST
-# # 1. Append Function - it adds only 1 item
-# A.append(7)
-# print(A)
 
-# # 2. Extend Function - it adds multiple items
-# A.extend([8,9,10])
-# print(A)
 
-# A.extend('Delhi')
-# print(A)
 
-# # 3. Insert Function - add item at desired location
-# A.insert(2, 100) #2-index, 100-item to be added at index 2
-# print(A)
+# # --------------Editing Strings---------------------
+# # String data type is immutable it can not be reassigned a new valu.
+# s = "HELLO WORLD"
+# # s[0] = 'L' #will give error
+# ans = 'L' + s[1:]
+# print(ans)
 
-# # EDITING EXISTING ITEMS IN A LIST
+# # --------------Deleting Strings---------------------
+# deleteing a portion of string is not allowed since string is immutable
+# s = "HELLO WORLD"
+# del s
 
-# A = [1,2,3,4,5]
-# A[2] = 500
-# print(A)
+# # --------------Operations on Strings---------------------
+# s1 = "hello"
+# s2 = "world"
 
-# A[1:3] = ['A','B','C']
-# print(A)
+# # ARITHEMATIC - add and multiplication allowed only
+# print(s1+ ' '+s2) 
+# print(s1*5)
 
-# # DELETING ITEMS FROM A LIST
-# # del
-# B = [1,2,3,4,5,6,7,8]
-# del B
-# print(B)
-# del B[0]
-# print(B)
+# # RELATIONAL OPERATORS
+# # logic - ham strings ko lexiographycally compare kr rhe hai means ASCII value ke basis pe comparison ho raha
+# print(s1 == s2)
+# print(s1 != s2)
+# print(s1 >= s2)
+# print(s1 > s2)
+# print(s1 <= s2)
+# print(s1 < s2)
+# print('Pune' > 'pune') #FALSE -> since ASCII value of "P" is smaller tha "p"
 
-# # remove - delete the data from its value and not index
-# B.remove(5)
-# print(B)
+# # LOGICAL OPERATORS
+# print(s1 and s2) # output: world -> python ne dekha and hai to pura check kr ke true print krna hoga to last wala true world print kiya
+# print(s1 or s2) # output: hello -> python ne dekha or hai to pahla wala true tha to pahle hello hi print kr diya
+# print("" and "world") # output: "" since and false dega 
+# print("" or "world") # since "" is falsy value to or ne world print kiya since its truthy value
 
-# # pop - iska default behaviour hai last item ko delete krna if idex not pass in parameter
-# B.pop()
-# print(B)
-
-# # clear - list ko empty kr deta hai
-# B.clear()
-# print(B)
-
-# # OPERATIONS ON LIST
-# # Arithmatic
-# A = [1,2,3]
-# B = ['A','B']
-# print(A+B)
-
-# # Multiplication
-# print(A*2)
-
-# # LOOPS IN LIST
-# L1 = [1,2,3,[4,5,6,7,8]]
-# for i in L1:
+# # LOOPS ON STRINGS
+# s = "HELLO"
+# for i in s:
 #     print(i)
 
+# for i in 'DELHI': #ye 5 baar PUNE print krega since delhi has 5 char
+#     print('PUNE')
+
+# # MEMBERSHIP OPERATORS
+# print('D' in 'Delhi')
+# print('A' in 'Delhi')
+# print('e' not in 'Delhi')
 
 
-# # LIST FUNCTIONS
+# # --------------String Functions---------------------
 
-# A = [1,2,3,4,3,3,5,2,5,56,2,2,2,38,9,0]
-# print(len(A))
-# print(max(A))
-# print(min(A))
-# # print(sorted(A, reverse=True)) #to reverse the list
+# # Common Functions
+# str = "HELLOWORLD"
+# # ---------------len---------------
+# print(len(str))
+# # ---------------max---------------
+# print(max(str))
+# # ---------------min---------------
+# print(min(str))
+# # ---------------sorted---------------
+# print(sorted(str, reverse=1))
 
-# print(A.count(2))
-# print(A.index(38))
-# A.reverse() #permanent op - it reverses the original list 
-# print(A)
+# # THESE WORKS ONLY ON STRINGS
+# # -----------------Capitalize-----------------
+# print("hello".capitalize())
+# # -----------------/Title-----------------
+# print("hello world how are you".title())
+# # -----------------/Upper-----------------
+# print("hello".upper())
+# # -----------------/Lower-----------------
+# print("hello".lower())
+# # -----------------/Swapcase-----------------
+# print("HeLlO wOrld".swapcase())
 
-# # Sorted vs Sort
-# B = [4,3,2,0,7,1]
-# print(B)
-# print(sorted(B)) #sort the data temp
-# print(B)
-# B.sort() #sort data permanently
-# print(B) 
+# # --------------------Count--------------------
+# print("my name is ashirwad chaurasia".count('i'))
+# # --------------------/Find--------------------
+# print("my name is ashirwad chaurasia".find('is'))
+# # --------------------/Index--------------------
+# print("my name is ashirwad chaurasia".index('h'))
 
-# # Copy - create a copy in momery
-# C = [2,4,2,4,8]
-# print(C)
-# print(id(C))
-# C1 = C.copy()
-# print(C1)
-# print(id(C1))
+# # -------------------endswith-------------------
+# print("my name is ashirwad chaurasia".endswith('chaurasia'))
+# # -------------------startswith-------------------
+# print("my name is ashirwad chaurasia".startswith('my'))
 
-# # LIST COMPREHENSION
-# # It provides a concise way of creating lists
-# # newlist = [expression for item in iterable if condition == true]
-# # Advantages
-# #  1 more time efficient and space efficient than loop
-# #  2 require fewer lines of code
-# #  3 transforms iterative statement into a formula
+# # ---------------format()----------------------
+# name = 'Ashirwad'
+# gender = 'male'
 
-# # HOW TO USE LIST COMREHENSION
-# # Add 1 to 10 numbers to a list
-# L = []
-# for i in range(1, 10):
-#     L.append(i)
+# print('Hi my name is {} and I am a {}'.format(name, gender))
 
-# print(L)
+# # ---------------------isalnum---------------------
+# print("123ashirwad".isalnum()) #check string is alphanumeric or not
+# # ---------------------isalpha---------------------
+# print("ashirwad".isalpha()) #check string is alphabetic or not
+# # ---------------------isdigit---------------------
+# print("1234".isdigit()) #checks string is digit or not
+# # ---------------------isidentifier---------------------
+# print("first_name".isidentifier())
+# print("first-name".isidentifier())
 
-# L = [i for i in range(1,10)]
-# print(L)
-
-# # scalar multiplication on a vector
-# v = [2,3,4]
-# s = -3
-
-# L = [s*i for i in v]
-# print(L)
-
-# # Add squares
-# v = [1,2,3,4,5]
-# L = [i**2 for i in v]
-# print(L)
-
-# Print all number divisible ny 5 in the range of 1 to 50
-A = [i for i in range(1,51) if i%5==0]
-print(A)
+# # ---------------------Split---------------------
+# print("my name is ashirwad".split())
+# # ---------------------Join---------------------
+# print(" ".join(['hi', 'my', 'name', 'is', 'ashirwad']))
+# # -----------------replace-----------------
+# print("hi my name is ashirwad".replace("ashirwad", "bappy"))
+# # -----------------strip-----------------
+# print("ashirwad            ".strip())
