@@ -179,48 +179,102 @@
 # #               Self ke jagah pr ham kuch bhi naam use kr sakte h jo bhi use krege vo hi point krega object of the class ko
 
 
-# ===============================================================
-# ========CREATING OUR OWN DATA TYPE USING OOPs CONCEPT==========
-# ===============================================================
+# # ===============================================================
+# # ========CREATING OUR OWN DATA TYPE USING OOPs CONCEPT==========
+# # ===============================================================
 
-# ========FRACTION DATA TYPE=============
+# # ========FRACTION DATA TYPE=============
 
-class Fraction:
-    # Parameterized Constructor: It expecting parameters
-    def __init__(self, x, y):
-        self.num = x
-        self.den = y
+# class Fraction:
+#     # Parameterized Constructor: It expecting parameters
+#     def __init__(self, x, y):
+#         self.num = x
+#         self.den = y
 
-    # 2nd Magic Method - to print the object
-    def __str__(self):
-        return '{}/{}'.format(self.num, self.den)
+#     # 2nd Magic Method - to print the object
+#     def __str__(self):
+#         return '{}/{}'.format(self.num, self.den)
 
-    # 3rd Magic Method - to add to object
-    def __add__(self, other):
-        new_num = self.num*other.den + other.num*self.den
-        new_den = self.den*other.den
-        return '{}/{}'.format(new_num, new_den)
+#     # 3rd Magic Method - to add to object
+#     def __add__(self, other):
+#         new_num = self.num*other.den + other.num*self.den
+#         new_den = self.den*other.den
+#         return '{}/{}'.format(new_num, new_den)
 
-    def __sub__(self, other):
-        new_num = self.num*other.den - other.num*self.den
-        new_den = self.den*other.den
-        return '{}/{}'.format(new_num, new_den)
+#     def __sub__(self, other):
+#         new_num = self.num*other.den - other.num*self.den
+#         new_den = self.den*other.den
+#         return '{}/{}'.format(new_num, new_den)
 
-    def __mul__(self, other):
-        new_num = self.num*other.num
-        new_den = self.den*other.den
-        return '{}/{}'.format(new_num, new_den)
+#     def __mul__(self, other):
+#         new_num = self.num*other.num
+#         new_den = self.den*other.den
+#         return '{}/{}'.format(new_num, new_den)
 
-    def __truediv__(self, other):
-        new_num = self.num*other.den
-        new_den = self.den*other.num
-        return '{}/{}'.format(new_num, new_den)
+#     def __truediv__(self, other):
+#         new_num = self.num*other.den
+#         new_den = self.den*other.num
+#         return '{}/{}'.format(new_num, new_den)
 
-# object of Fraction() class created
-fr1 = Fraction(2,3) 
-print(fr1)
-fr2 = Fraction(2,3) 
-print('add: ', fr2 + fr1)
-print('sub: ', fr2 - fr1)
-print('mult: ', fr2 * fr1)
-print('div: ', fr2 / fr1)
+# # object of Fraction() class created
+# fr1 = Fraction(2,3) 
+# print(fr1)
+# fr2 = Fraction(2,3) 
+# print('add: ', fr2 + fr1)
+# print('sub: ', fr2 - fr1)
+# print('mult: ', fr2 * fr1)
+# print('div: ', fr2 / fr1)
+
+
+# # Write OOP classes to handle the following scenarios:
+# # 1. A user can create and view 2D coordinates
+# # 2. A user can find out the distance between 2 coordinates
+# # 3. A user can find find the distance of a coordinate from origin
+# # 4. A user can check if a point lies on a given line
+# # 5. A user can find the distance between a given 2D point and a given line
+
+# class Point:
+#     def __init__(self, x, y):
+#         self.x_cod = x
+#         self.y_cod = y
+
+#     def __str__(self):
+#         return '<{},{}>'.format(self.x_cod, self.y_cod)
+
+#     # distance bw 2-points
+#     def euclidean_dist(self, other):
+#         return ((self.x_cod - other.x_cod)**2 + (self.y_cod - other.y_cod)**2)**0.5
+
+#     # distance from origin
+#     def dist_from_origin(self):
+#         # return self.euclidean_dist(Point(0,0))
+#         return (self.x_cod**2 + self.y_cod**2)**0.5
+
+# class Line: 
+#     def __init__(self, A, B, C):
+#         self.A = A
+#         self.B = B
+#         self.C = C
+        
+#     def __str__(self):
+#         return '{}x + {}y + {} = 0'.format(self.A, self.B, self.C)
+
+#     # a point exists on a line or not
+#     def point_on_line(line, point):
+#         if line.A*point.x_cod + line.B*point.y_cod + line.C == 0:
+#             return "point lies on the line"
+#         else:
+#             return "point not lies on the line"
+
+#     # dist bw a point and a line 
+#     def shortest_dist(line, point):
+#         return abs(line.A*point.x_cod + line.B*point.y_cod + line.C)/(line.A**2 + line.B**2) 
+
+
+
+# P1 = Point(10,100)
+# L1 = Line(2,2,-4)
+# print(P1)
+# print(L1)
+# ans = L1.shortest_dist(P1)
+# print(ans)
