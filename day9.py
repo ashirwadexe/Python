@@ -366,3 +366,32 @@
 # s.buy()
 
 
+
+# # =====================================================
+# # ================== POLYMORPHISM =====================
+# # =====================================================
+
+# # ------------------ METHOD OVERRIDING ------------------
+
+# # ------------------ METHOD OVERLOADING -----------------
+# # Ek hi class ke andar same name ke 2 ya more methods hai bus dono ke number of arguments alag-alag hain
+# # NOTE: Python me method overloading nhi hota  
+# # eg. -> 
+# class Shape:
+#     # 1 argument - raduis of circle
+#     def area(self, radius):
+#         return 3.14*radius*radius
+
+#     # 2 arguments - length and breadth
+#     def area(self, l, b):
+#         return l*b
+
+
+# ------------------ OPERATOR OVERLOADING -----------------
+# same operator ka behaviour is different when input is different
+# eg. -> 
+#     'hello' + 'hello' = 'hello world'
+#     4 + 5 = 9
+#     [1,2,3] + [4,5] = [1,2,3,4,5]
+
+
