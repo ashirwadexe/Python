@@ -140,3 +140,51 @@
 # a = 1
 # outer()
 # print('main function')
+
+# ==========================================
+# ============== DECORATORS ================
+# ==========================================
+
+# A decorator in python is a function that receives another function as input and adds some functionality(decoration) to it and returns it.
+# This can happen only because python functions are 1st class citizens.
+# There are 2 types of decorators available in python
+#   --> Built in decorators like @staticmethod, @classmethod, @abstractmethod and @property etc
+#   --> User defined decorators that we programmers can create according to our needs
+
+# # Python are 1st class citzens - vo functions jispe sare type ke operations perform ho sakte hai
+# def func():
+#     print('hello')
+
+# a = func
+# a()
+# del func
+# func()
+
+# eg. -->
+# def modify(func, num):
+#     return func(num)
+
+# def square(num):
+#     return num**2
+
+# ans = modify(square, 5)
+# print(ans)
+
+# # simple example of decorator
+# def my_decorator(func):
+#     def wrapper():
+#         print('****************')
+#         func()
+#         print('****************')
+#     return wrapper
+
+# def hello():
+#     print('hello')
+# my_decorator(hello)
+
+# def dispaly():
+#     print('hello ashirwad')
+# my_decorator(dispaly)
+
+
+
