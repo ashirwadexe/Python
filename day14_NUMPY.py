@@ -39,3 +39,37 @@ import numpy as np
 
 # convenience --> numpy is much better option when we are working in data science project since it takes much less memory and time
 
+# # ===============================================
+# # ============== ADVANCE INDEXING ===============
+# # ===============================================
+
+# a = np.arange(24).reshape(6,4)
+# print(a)
+
+# # Fancy Indexing  --> using this we can get desired row and column
+
+# # row 0,2,3 print krao
+# print(a[[0,2,3]])
+# # row - 0,2,3,5
+# print(a[[0,2,3,5]])
+# # column - 0,2,3
+# print(a[:, [0,2,3]])
+
+# Boolian Indexing --> more interestiung than other indexing
+
+# abhi tak ham index positions se nikal rhe the items ko
+# but ab ham logic implement kr ke items nikalenge
+a = np.random.randint(1,100,24).reshape(6,4) # every time we print it will give a new array
+print(a)
+
+# # find all numbers greater than 50 from a
+# print(a[a > 50]) # only no greater than 50 in a will print others will not
+
+# # find even no
+# print(a[a%2==0])
+
+# # find all no greater than 50 and are even
+# print(a[(a>50) & (a%2==0)])
+
+# find all numbers not divisble by 7
+print(a[a%7!=0])
